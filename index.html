@@ -8,8 +8,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS and Tailwind Configuration -->
     <style>
@@ -49,6 +51,13 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* FAQ Accordion Styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
     </style>
     <script>
         // Tailwind CSS Customization
@@ -81,13 +90,25 @@
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#features" class="hover:text-primary transition-colors duration-300">Features</a>
+                <a href="#use-cases" class="hover:text-primary transition-colors duration-300">Use Cases</a>
                 <a href="#pricing" class="hover:text-primary transition-colors duration-300">Pricing</a>
                 <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
             </div>
             <a href="#pricing" class="hidden md:block bg-primary text-white font-bold py-2 px-5 rounded-lg hover:bg-primary-hover transition-transform duration-300 hover:scale-105">
                 Get Started
             </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#features" class="block py-2 px-6 text-white hover:bg-dark-card">Features</a>
+            <a href="#use-cases" class="block py-2 px-6 text-white hover:bg-dark-card">Use Cases</a>
+            <a href="#pricing" class="block py-2 px-6 text-white hover:bg-dark-card">Pricing</a>
+            <a href="#contact" class="block py-2 px-6 text-white hover:bg-dark-card">Contact</a>
+        </div>
     </header>
 
     <main class="pt-20">
@@ -141,6 +162,85 @@
                 </div>
             </div>
         </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Get Started in 3 Simple Steps</h2>
+                </div>
+                <div class="relative">
+                    <!-- Dotted line connector -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-dark-border"></div>
+                    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <!-- Step 1 -->
+                        <div class="text-center">
+                            <div class="bg-dark-card border-2 border-primary h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-3xl font-bold text-primary">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Define Your Goal</h3>
+                            <p class="text-gray-400">Describe the task you want to automate in plain English. From research to data entry.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="text-center">
+                             <div class="bg-dark-card border-2 border-primary h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-3xl font-bold text-primary">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Connect Your Tools</h3>
+                            <p class="text-gray-400">Grant access to the apps and platforms your agent needs to complete its work.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="text-center">
+                             <div class="bg-dark-card border-2 border-primary h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-3xl font-bold text-primary">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Launch & Monitor</h3>
+                            <p class="text-gray-400">Deploy your agent and watch it work. Get real-time updates on its progress.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="py-20 bg-dark-card/50 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white">One Tool, Endless Possibilities</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Automate any process across any department.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Use Case 1: Marketing -->
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">For Marketing</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Analyze campaign performance data</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Generate social media content</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Automate SEO keyword research</span></li>
+                        </ul>
+                    </div>
+                    <!-- Use Case 2: Sales -->
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">For Sales</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Qualify and enrich new leads</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Draft personalized follow-up emails</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Update CRM records automatically</span></li>
+                        </ul>
+                    </div>
+                     <!-- Use Case 3: Operations -->
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">For Operations</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Process invoices and expenses</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Manage inventory and orders</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-2 mt-1">&#10003;</span><span>Schedule meetings and appointments</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Pricing Section -->
         <section id="pricing" class="py-20 fade-in-section">
@@ -201,6 +301,89 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-dark-card/50 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Loved by Teams Worldwide</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <p class="text-gray-400 italic">"This is a game-changer. We've automated 80% of our manual reporting, freeing up our team to focus on strategic initiatives."</p>
+                        <div class="flex items-center mt-4">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-white mr-4">SA</div>
+                            <div>
+                                <p class="font-bold text-white">Sarah Adams</p>
+                                <p class="text-sm text-gray-500">COO, Innovate Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <p class="text-gray-400 italic">"The sales agent qualifies leads better than our junior reps. Our conversion rates have increased by 30% since we started."</p>
+                        <div class="flex items-center mt-4">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-white mr-4">MJ</div>
+                            <div>
+                                <p class="font-bold text-white">Mark Johnson</p>
+                                <p class="text-sm text-gray-500">Head of Sales, Growth Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-dark-card border border-dark-border rounded-xl p-8">
+                        <p class="text-gray-400 italic">"As a developer, the API is a dream to work with. I built a custom agent for our CI/CD pipeline in just a few hours."</p>
+                        <div class="flex items-center mt-4">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-white mr-4">EC</div>
+                            <div>
+                                <p class="font-bold text-white">Emily Chen</p>
+                                <p class="text-sm text-gray-500">Lead Engineer, Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-dark-card border border-dark-border rounded-lg">
+                        <button class="faq-question w-full text-left flex justify-between items-center p-6">
+                            <span class="text-lg font-semibold text-white">Is my data secure?</span>
+                            <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Absolutely. We use industry-standard encryption for all data, both in transit and at rest. Your connected app credentials are stored securely, and our agents operate in isolated environments. We are fully compliant with GDPR and CCPA.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                     <div class="bg-dark-card border border-dark-border rounded-lg">
+                        <button class="faq-question w-full text-left flex justify-between items-center p-6">
+                            <span class="text-lg font-semibold text-white">What kind of tasks can AI Agents perform?</span>
+                             <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Almost any digital task you can describe. This includes web research, data entry, sending emails, managing spreadsheets, interacting with APIs, social media management, and much more. If you can do it on a computer, chances are an AI Agent can too.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                     <div class="bg-dark-card border border-dark-border rounded-lg">
+                        <button class="faq-question w-full text-left flex justify-between items-center p-6">
+                            <span class="text-lg font-semibold text-white">Can I customize an agent for my specific needs?</span>
+                             <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Yes. While our agents are powerful out-of-the-box, our Business and Enterprise plans offer extensive customization options, including access to our full API for developers to build highly specialized agents tailored to your unique workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -232,6 +415,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
             // --- Typewriter Effect ---
             const typewriterElement = document.getElementById('typewriter');
             const words = ["Workforce.", "Team.", "Business."];
@@ -262,8 +452,9 @@
 
                 setTimeout(type, typeSpeed);
             }
-            
-            type();
+            if (typewriterElement) {
+                type();
+            }
 
             // --- Scroll-triggered Fade-in Animation ---
             const sections = document.querySelectorAll('.fade-in-section');
@@ -274,13 +465,31 @@
                     }
                 });
             }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
+                threshold: 0.1
             });
 
             sections.forEach(section => {
                 observer.observe(section);
             });
+
+            // --- FAQ Accordion ---
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('svg');
+
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
         });
     </script>
 </body>
 </html>
+
